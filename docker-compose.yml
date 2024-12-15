@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  server:
+    image: taothong/web:1.0
+    container_name: apache2
+    ports:
+      - 80:80
+    networks:
+      - link        
+    volumes:
+      - ./html:/var/www/html
+      # - ./html2:/var/www/html
+
+# ------------------------------------------------------------
+
+  
+networks:
+  link:
+    driver: bridge      
